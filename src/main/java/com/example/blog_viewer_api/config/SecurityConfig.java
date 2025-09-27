@@ -58,6 +58,7 @@ import java.util.List;
                     .csrf(AbstractHttpConfigurer::disable) // disable for simplicity (enable later with tokens)
                     .authorizeHttpRequests(auth -> auth
                             .requestMatchers(HttpMethod.GET, "/api/blogs/**").permitAll()
+                            .requestMatchers(HttpMethod.POST, "/api/blogs/login").permitAll()
                             .requestMatchers(HttpMethod.POST, "/api/blogs/**").hasRole("ADMIN")
                             .requestMatchers(HttpMethod.PUT, "/api/blogs/**").hasRole("ADMIN")
                             .requestMatchers(HttpMethod.DELETE, "/api/blogs/**").hasRole("ADMIN")
