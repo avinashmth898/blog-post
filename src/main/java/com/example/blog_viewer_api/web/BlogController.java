@@ -34,16 +34,16 @@ public class BlogController {
     public Blog getOne(@PathVariable Long id) {
         return repo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Blog not found"));
     }
-    @PostMapping("/login")
-    public String login(@RequestBody Map<String, String> credentials) {
-        String username = credentials.get("username");
-        String password = credentials.get("password");
-
-        if ("admin".equals(username) && "password".equals(password)) {
-            return "Login successful!";
-        }
-        return "Invalid credentials!";
-    }
+//    @PostMapping("/login")
+//    public String login(@RequestBody Map<String, String> credentials) {
+//        String username = credentials.get("username");
+//        String password = credentials.get("password");
+//
+//        if ("admin".equals(username) && "password".equals(password)) {
+//            return "Login successful!";
+//        }
+//        return "Invalid credentials!";
+//    }
 
 
     @PostMapping
